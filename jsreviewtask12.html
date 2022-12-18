@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<input type="text" id="mark1" value="" placeholder="Tamil">
+	<input type="text" id="mark2" value="">
+	<input type="text" id="mark3" value="">
+	<input type="text" id="mark4" value="">
+	<input type="text" id="mark5" value="">
+	<input type="text" id="total1" value="">
+	<input type="text" id="percentage" value="">
+	<button type="button" id="btn">click</button>
+	<h3 id="grade"></h3>
+	<script>
+		let but=document.getElementById("btn");
+		btn.addEventListener("click",myfunc);
+		function myfunc(){
+			let input1=document.getElementById("mark1").value;
+			let input2=document.getElementById("mark2").value;
+			let input3=document.getElementById("mark3").value;
+			let input4=document.getElementById("mark4").value;
+			let input5=document.getElementById("mark5").value;
+			let total=parseInt(input1)+parseInt(input2)+parseInt(input3)+parseInt(input4)+parseInt(input5);
+			document.getElementById("total1").value=total;
+			let percentage=total/500*100;
+			document.getElementById("percentage").value=percentage;
+			if(percentage>90){
+				document.getElementById("grade").innerHTML=("o")
+			}
+			else if(percentage>80){
+				document.getElementById("grade").innerHTML=("A")
+			}
+			else if(percentage>70){
+				document.getElementById("grade").innerHTML=("B")
+			}
+			else if(percentage>60){
+				document.getElementById("grade").innerHTML=("C")
+			}
+			else if(percentage>50){
+				document.getElementById("grade").innerHTML=("D")
+			}
+			else{
+				document.getElementById("grade").innerHTML=("fail")
+			}
+		}
+	</script>
+</body>
+</html>
